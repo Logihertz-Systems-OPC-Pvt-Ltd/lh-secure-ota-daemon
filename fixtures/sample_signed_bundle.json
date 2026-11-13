@@ -1,0 +1,28 @@
+{
+  "bundle_version": "1.2.0",
+  "security_version_number": 2,
+  "hardware_compat_id": "LH-ROBOTICS-AGX-V2",
+  "issued_at_unix": 1794559579,
+  "expires_at_unix": 1826095579,
+  "payload_size_bytes": 32768,
+  "payload_sha256_hex": "e7701d86899d704c44907a7606ec2b487003f3e01a9cfeee6fb9700b48d98381",
+  "dm_verity_root_hash_hex": "a3f9e8b7c6d5e4f3a2b10987654321fedcba0987654321fedcba0987654321fe",
+  "chunk_size_bytes": 4096,
+  "chunk_sha256_list": [
+    "f7dae5cdb70a70fe253090b7841fbe2d7d9c478f2ae725e9f0b4b839dd8f1f36",
+    "0b314bae63617529c676ddabc7b7c0e2167e89ee7708cf97841f945fb33692f9",
+    "e376a05145035cb562e553caa98277285724fcc9d80fadc4951aec83005b1d86",
+    "1868a73ff9dc5f69f96e9de7ea94b613e445405ae7fd20454ca08142d2f75aed",
+    "4023fd8c6877931ffa587dc3038670c4dcd6f4150ad1f662817de18d879729d0",
+    "3a22d4d2e2df31b9b035df667a4ecc8e14b7fd1cc1e92750992fae36b061d6ee",
+    "44bba3b4ee220b069af7315b4dda627d5e821cbb03e4a05a8015a3da360555c0",
+    "5b003a8ce77e36a071349fc4d8157453e8d37b213bc2d29abd7617521d31cdd0"
+  ],
+  "signatures": [
+    {
+      "key_id": "root-signer-01",
+      "public_key_hex": "9610d1f4fbb7f9ce241da200d2056b9a178b6b6e0f32a19f9d92ae3a7e0a6d56",
+      "signature_hex": "384bd6fc4e4e6cf8f934318e93914d36e54b15e133db808fd7b84b30f8dd2a35a930c5dfb5f91e91dd11fa676b968291947f3978b95464805f465552ab491d05"
+    }
+  ]
+}

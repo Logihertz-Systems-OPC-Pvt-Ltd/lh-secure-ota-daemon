@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: Build, Audit & Test Suite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          check-latest: false
+
+      - name: Verify Code Formatting (gofmt)
+        run: |
+          diff_files=$(gofmt -s -l .)
+          if [ -n "$diff_files" ]; then
+            echo "Formatting check failed for files:"
+            echo "$diff_files"
+            exit 1
+          fi
+
+      - name: Static Analysis (go vet)
+        run: go vet ./...
+
+      - name: Run Tests with Race Detector & Coverage
+        run: go test -v -race -coverprofile=coverage.out ./...
+
+      - name: Compile Binary
+        run: go build -v -ldflags="-s -w" -o bin/lh-ota ./cmd/lh-ota
+
+      - name: Smoke Test CLI Subcommands
+        run: |
+          ./bin/lh-ota --version
+          ./bin/lh-ota --help
+          ./bin/lh-ota scan fixtures/hardened_ota_policy.json
+          ./bin/lh-ota verify-bundle \
+            --manifest=fixtures/sample_signed_bundle.json \
+            --payload=fixtures/sample_firmware.bin \
+            --pub-keys=fixtures/trusted_keyring.json \
+            --min-quorum=1 \
+            --current-svn=1 \
+            --hw-id=LH-ROBOTICS-AGX-V2
+          ./bin/lh-ota simulate-ab --initial-slot=SLOT_A --fail-healthcheck

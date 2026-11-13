@@ -1,0 +1,14 @@
+# Binaries
+bin/
+/lh-ota
+dist/
+
+# Test coverage & logs
+coverage.out
+*.cov
+*.log
+*.tmp
+
+# Operating system artifacts
+.DS_Store
+Thumbs.db

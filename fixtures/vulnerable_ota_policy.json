@@ -1,0 +1,22 @@
+{
+  "signature_verification_enabled": false,
+  "signature_algorithm": "RSA-1024",
+  "dual_ab_partition_scheme": false,
+  "allow_active_slot_overwrite": true,
+  "require_tls_1_3": false,
+  "mtls_client_auth_enabled": false,
+  "allow_insecure_http_fallback": true,
+  "anti_rollback_svn_enforced": false,
+  "ratchet_svn_only_after_good_boot": false,
+  "boot_trial_max_attempts": 0,
+  "auto_rollback_on_healthcheck_fail": false,
+  "min_signature_quorum": 1,
+  "enforce_manifest_expiration": false,
+  "verify_chunk_hashes_before_write": false,
+  "bind_dm_verity_roothash": false,
+  "verify_hardware_compat_id": false,
+  "max_bundle_size_mb": 4096,
+  "min_battery_soc_percent": 5,
+  "poll_jitter_enabled": false,
+  "signed_ota_audit_receipt": false
+}

@@ -1,0 +1,22 @@
+{
+  "signature_verification_enabled": true,
+  "signature_algorithm": "Ed25519",
+  "dual_ab_partition_scheme": true,
+  "allow_active_slot_overwrite": false,
+  "require_tls_1_3": true,
+  "mtls_client_auth_enabled": true,
+  "allow_insecure_http_fallback": false,
+  "anti_rollback_svn_enforced": true,
+  "ratchet_svn_only_after_good_boot": true,
+  "boot_trial_max_attempts": 3,
+  "auto_rollback_on_healthcheck_fail": true,
+  "min_signature_quorum": 2,
+  "enforce_manifest_expiration": true,
+  "verify_chunk_hashes_before_write": true,
+  "bind_dm_verity_roothash": true,
+  "verify_hardware_compat_id": true,
+  "max_bundle_size_mb": 512,
+  "min_battery_soc_percent": 50,
+  "poll_jitter_enabled": true,
+  "signed_ota_audit_receipt": true
+}
