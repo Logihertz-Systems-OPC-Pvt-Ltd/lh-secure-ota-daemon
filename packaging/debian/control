@@ -1,0 +1,9 @@
+Package: lh-secure-ota-daemon
+Version: 0.1.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: Sameer Tawade <ops@logihertz.com>
+Homepage: https://www.logihertz.com
+Description: lh-ota - Threshold Ed25519 Quorum & Monotonic SVN Anti-Rollback
+ Zero-dependency Go atomic dual A/B partition Over-The-Air (OTA) firmware updater with M-of-N threshold Ed25519 signature verification, streaming chunk SHA-256 checks, watchdog boot-trial rollback, and SVN ratcheting.
